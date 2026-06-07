@@ -25,9 +25,30 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-screen font-sans bg-white text-zinc-900">
+        <div className="w-full max-w-[1600px] mx-auto flex flex-col min-h-screen relative">
+          <header className="flex items-center justify-between px-8 py-6 lg:px-12">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-zinc-900 flex items-center justify-center text-white">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+              </div>
+              <span className="text-xl font-bold tracking-tight text-zinc-900">Neon Tech</span>
+            </div>
+            <div className="flex items-center gap-8">
+              <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-zinc-600">
+                <a href="#" className="hover:text-zinc-900 transition-colors">Blog</a>
+                <a href="#" className="hover:text-zinc-900 transition-colors">Contact</a>
+              </nav>
+              <button className="w-10 h-10 rounded-full bg-[#202E5A] text-white flex items-center justify-center hover:bg-[#152042] transition-colors">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+              </button>
+            </div>
+          </header>
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
