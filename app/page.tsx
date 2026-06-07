@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { Testimonials } from "@/components/Testimonials";
 import { MagicText } from "@/components/ui/magic-text";
-// import { Testimonials } from "@/components/Testimonials";
+import { Testimonials } from "@/components/Testimonials";
+import { TopFeatures } from "@/components/TopFeatures";
+import { CtaQuote } from "@/components/CtaQuote";
 
 export default function Home() {
   return (
@@ -178,8 +179,14 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Top Features Section */}
+      <TopFeatures />
+
       {/* Testimonials Section */}
       <Testimonials />
+
+      {/* CTA Quote Section */}
+      <CtaQuote />
     </main>
   );
 }
