@@ -72,54 +72,78 @@ export default function DisplayCards({ cards }: DisplayCardsProps) {
       </div>
 
       <AnimatePresence>
-        {selectedCard && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm"
-            onClick={() => setSelectedCard(null)}
-          >
+        {selectedCard && (() => {
+          const isIndigo = selectedCard.iconClassName?.includes("indigo");
+          const isAmber = selectedCard.iconClassName?.includes("amber");
+          const isEmerald = selectedCard.iconClassName?.includes("emerald");
+
+          const bgIconClass = isIndigo ? "bg-indigo-50" : isAmber ? "bg-amber-50" : isEmerald ? "bg-emerald-50" : "bg-zinc-50";
+          const bgContentClass = isIndigo 
+            ? "bg-indigo-50/30 border-indigo-100/60" 
+            : isAmber 
+            ? "bg-amber-50/30 border-amber-100/60" 
+            : isEmerald 
+            ? "bg-emerald-50/30 border-emerald-100/60" 
+            : "bg-zinc-50/50 border-zinc-100";
+          const badgeClass = isIndigo 
+            ? "bg-indigo-50/60 text-indigo-700 border-indigo-100/60" 
+            : isAmber 
+            ? "bg-amber-50/60 text-amber-700 border-amber-100/60" 
+            : isEmerald 
+            ? "bg-emerald-50/60 text-emerald-700 border-emerald-100/60" 
+            : "bg-zinc-50 text-zinc-600 border-zinc-100";
+
+          return (
             <motion.div 
-              initial={{ scale: 0.95, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0, y: 20 }}
-              className="bg-white rounded-3xl p-8 max-w-lg w-full shadow-2xl relative"
-              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/40 backdrop-blur-sm"
+              onClick={() => setSelectedCard(null)}
             >
-              <button 
-                onClick={() => setSelectedCard(null)} 
-                className="absolute top-6 right-6 p-2 rounded-full hover:bg-zinc-100 transition-colors text-zinc-500"
+              <motion.div 
+                initial={{ scale: 0.95, opacity: 0, y: 20 }}
+                animate={{ scale: 1, opacity: 1, y: 0 }}
+                exit={{ scale: 0.95, opacity: 0, y: 20 }}
+                className="bg-white rounded-[2rem] p-8 max-w-lg w-full shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-zinc-100 relative"
+                onClick={(e) => e.stopPropagation()}
               >
-                <X className="size-5" />
-              </button>
-              
-              <div className="flex items-center gap-4 mb-6">
-                <div className={cn("p-3 rounded-2xl bg-zinc-50", selectedCard.iconClassName)}>
-                  {selectedCard.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-zinc-900">{selectedCard.title}</h3>
-              </div>
-              
-              <p className="text-lg font-medium text-zinc-800 mb-6">{selectedCard.description}</p>
-              
-              <div className="bg-zinc-50 p-6 rounded-2xl border border-zinc-100">
-                <p className="text-zinc-600 leading-relaxed">
-                  {selectedCard.fullDescription}
-                </p>
-              </div>
-              
-              <div className="mt-8 flex justify-end">
                 <button 
-                  onClick={() => setSelectedCard(null)}
-                  className="px-6 py-2.5 bg-zinc-900 text-white rounded-full font-medium hover:bg-zinc-800 transition-colors"
+                  onClick={() => setSelectedCard(null)} 
+                  className="absolute top-6 right-6 p-2.5 rounded-full hover:bg-zinc-50 text-zinc-400 hover:text-zinc-600 transition-colors"
                 >
-                  Close
+                  <X className="size-5" />
                 </button>
-              </div>
+                
+                <div className="flex items-center gap-4 mb-6">
+                  <div className={cn("p-3.5 rounded-2xl flex items-center justify-center shrink-0", bgIconClass)}>
+                    {selectedCard.icon}
+                  </div>
+                  <h3 className="text-2xl font-extrabold text-zinc-900 tracking-tight">{selectedCard.title}</h3>
+                </div>
+                
+                <div className="flex justify-start mb-6">
+                  <span className={cn("px-4 py-1.5 rounded-full text-sm font-bold border", badgeClass)}>
+                    {selectedCard.description}
+                  </span>
+                </div>
+                
+                <div className={cn("p-6 rounded-2xl border text-[15px] leading-relaxed text-zinc-600 font-medium", bgContentClass)}>
+                  {selectedCard.fullDescription}
+                </div>
+                
+                <div className="mt-8 flex justify-end">
+                  <button 
+                    onClick={() => setSelectedCard(null)}
+                    className="px-8 py-3 bg-[#202E5A] text-white rounded-full font-bold text-sm hover:bg-[#152042] transition-all hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-[#202E5A]/20"
+                  >
+                    Got it, thanks
+                  </button>
+                </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
+          );
+        })()}
       </AnimatePresence>
     </>
   );

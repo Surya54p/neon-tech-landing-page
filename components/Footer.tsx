@@ -13,7 +13,7 @@ export function Footer() {
       </div>
 
       <div className="mx-auto w-full max-w-7xl px-6 xl:px-0">
-        <div className="relative flex flex-col border border-[#202E5A]/20 bg-zinc-50/50">
+        <div className="relative flex flex-col border border-[#202E5A]/20 bg-white">
           <DotPattern width={16} height={16} cx={1} cy={1} cr={1} className="fill-[#202E5A]/5" />
 
           {/* Corner Squares */}
@@ -40,28 +40,28 @@ export function Footer() {
             <div className="flex flex-wrap gap-16 md:gap-24">
               <div className="flex flex-col gap-5">
                 <p className="font-bold text-zinc-900 uppercase tracking-widest text-sm mb-2">Platform</p>
-                <a href="#" className="text-zinc-500 hover:text-[#202E5A] font-medium transition-colors">GPU Cloud</a>
-                <a href="#" className="text-zinc-500 hover:text-[#202E5A] font-medium transition-colors">Inference APIs</a>
-                <a href="#" className="text-zinc-500 hover:text-[#202E5A] font-medium transition-colors">Enterprise</a>
-                <a href="#" className="text-zinc-500 hover:text-[#202E5A] font-medium transition-colors">Pricing</a>
+                <a href="#" className=" hover:text-[#202E5A] font-medium transition-colors">GPU Cloud</a>
+                <a href="#" className=" hover:text-[#202E5A] font-medium transition-colors">Inference APIs</a>
+                <a href="#" className=" hover:text-[#202E5A] font-medium transition-colors">Enterprise</a>
+                <a href="#" className=" hover:text-[#202E5A] font-medium transition-colors">Pricing</a>
               </div>
               <div className="flex flex-col gap-5">
                 <p className="font-bold text-zinc-900 uppercase tracking-widest text-sm mb-2">Company</p>
-                <a href="#" className="text-zinc-500 hover:text-[#202E5A] font-medium transition-colors">About Us</a>
-                <a href="#" className="text-zinc-500 hover:text-[#202E5A] font-medium transition-colors">Blog</a>
-                <a href="#" className="text-zinc-500 hover:text-[#202E5A] font-medium transition-colors">Careers</a>
-                <a href="#" className="text-zinc-500 hover:text-[#202E5A] font-medium transition-colors">Contact</a>
+                <a href="#" className=" hover:text-[#202E5A] font-medium transition-colors">About Us</a>
+                <a href="#" className=" hover:text-[#202E5A] font-medium transition-colors">Blog</a>
+                <a href="#" className=" hover:text-[#202E5A] font-medium transition-colors">Careers</a>
+                <a href="#" className=" hover:text-[#202E5A] font-medium transition-colors">Contact</a>
               </div>
             </div>
           </div>
 
           {/* Bottom Bar */}
           <div className="relative z-20 w-full px-8 py-6 border-t border-[#202E5A]/10 flex flex-col md:flex-row items-center justify-between gap-6">
-            <p className="text-zinc-500 font-medium text-sm">© 2026 Neon Tech Inc. All rights reserved.</p>
+            <p className=" font-medium text-sm">© 2026 Neon Tech Inc. All rights reserved.</p>
             <div className="flex gap-8">
-              <a href="#" className="text-zinc-400 hover:text-[#202E5A] font-medium text-sm transition-colors">Twitter</a>
-              <a href="#" className="text-zinc-400 hover:text-[#202E5A] font-medium text-sm transition-colors">GitHub</a>
-              <a href="#" className="text-zinc-400 hover:text-[#202E5A] font-medium text-sm transition-colors">Discord</a>
+              <a href="#" className=" font-medium text-sm transition-colors">Twitter</a>
+              <a href="#" className=" font-medium text-sm transition-colors">GitHub</a>
+              <a href="#" className=" font-medium text-sm transition-colors">Discord</a>
             </div>
           </div>
 
