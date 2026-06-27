@@ -7,7 +7,7 @@ const products = [
     subtitle: "On-demand high-performance computing",
     description: "Get instant access to state-of-the-art GPUs for training, fine-tuning, and heavy batch inference workloads without any setup friction.",
     icon: <Cpu className="size-6 text-[#202E5A]" />,
-    bgClass: "bg-indigo-50/20 border-indigo-100/50",
+    bgClass: "bg-slate-50 border-gray-300",
     badge: "Most Popular",
     badgeClass: "bg-indigo-50 text-indigo-700 border-indigo-100",
     features: [
@@ -25,7 +25,7 @@ const products = [
     subtitle: "Auto-scaling serverless model endpoints",
     description: "Deploy any open-source or custom model instantly behind a scalable, low-latency API endpoint. Zero server management required.",
     icon: <Zap className="size-6 text-[#202E5A]" />,
-    bgClass: "bg-amber-50/20 border-amber-100/50",
+    bgClass: "bg-slate-50 border-gray-300",
     badge: "New Feature",
     badgeClass: "bg-amber-50 text-amber-700 border-amber-100",
     features: [
@@ -43,7 +43,7 @@ const products = [
     subtitle: "Dedicated and secure private GPU pools",
     description: "For organizations requiring secure, isolated, and dedicated compute capacity. Custom tailored to match your compliance and scale demands.",
     icon: <Shield className="size-6 text-[#202E5A]" />,
-    bgClass: "bg-emerald-50/20 border-emerald-100/50",
+    bgClass: "bg-slate-50 border-gray-300",
     badge: "Enterprise",
     badgeClass: "bg-emerald-50 text-emerald-700 border-emerald-100",
     features: [
